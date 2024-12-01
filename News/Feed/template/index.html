@@ -1,0 +1,544 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="shortcut icon" href="{% static 'img/logo.jpg' %}" type="">
+
+  <title>Campus News Feed Web Application</title>
+
+  <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'css/maicons.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+  <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.carousel.css' %}">
+
+  <link rel="stylesheet" href="{% static 'vendor/animate/animate.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+</head>
+
+<body>
+
+
+  <div class="back-to-top"></div>
+
+
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+        <div class="container">
+          <div class="navbar-brand">
+              <img src="{% static 'img/Desc.jpg' %}" style="width: 80px; height: 80px; margin-top: 3px">
+              <span>M.A.U<span style="color:black"> Campus</span></span>
+          </div>            
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupport">
+              <ul class="navbar-nav ml-auto" style="margin-top: -20px;">
+                  <li class="nav-item active" style="padding-top: 18px;">
+                      <a class="nav-link nm" href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li class="nav-item" style="padding-top: 18px;">
+                      <a class="nav-link nm" href="{% url 'news' %}">News</a>
+                  </li>  
+                  <li class="nav-item" style="padding-top: 18px;">
+                      <a class="nav-link nm" href="{% url 'campus' %}">Campus Life</a>
+                  </li>
+                  <li class="nav-item" style="padding-top: 18px;">
+                      <a class="nav-link nm" href="{% url 'register' %}">Register</a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+    </header>
+
+  <div class="page-hero bg-image overlay-dark" style="background-image: url({% static 'img/project2.jpg' %});">
+    <div class="hero-section">
+      <div class="container text-center wow zoomIn">
+        <span class="subhead">Your one-stop source for campus news, events, and resources</span>
+        <h1 class="display-4">Stay Connected, Stay Informed</h1>
+        <a href="{% url 'news' %}" class="btn btn-link" style="color:white;">Explore Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="page-section py-3 mt-md-n5 custom-index" style="font-family: Arial !important">
+      <div class="container" style="box-shadow: 0 0 20px rgba(0, 0, 30, 0.1); border: 3px white;">
+        <div class="wow fadeInUp" id="features">
+          <ul class="nav nav-tabs row">
+            <li class="nav-item nav-item-dis col-lg-2 col-md-4 col-6">
+              <a class="nav-link nav-link-dis active text-center" data-toggle="tab" href="#Uninews">
+                <div class="circle-shape text-white plk" style="background-color: grey;">
+                  <span class="mai-newspaper" style="width: 300px; height: 100px;"></span>
+                </div>
+                <p style="font-weight: bold; display: block; margin-top: 10px; font-size: 18px; color: black;">University News</p>
+              </a>
+            </li>
+            <li class="nav-item nav-item-dis col-lg-2 col-md-4 col-6">
+              <a class="nav-link nav-link-dis text-center" data-toggle="tab" href="#calendar">
+                <div class="circle-shape text-white plk" style="background-color: grey;">
+                  <span class="mai-calendar" style="width: 300px; height: 100px;"></span>
+                </div>
+                <p style="font-weight: bold; margin-top: 10px; font-size: 18px; color: black;">School Calendar</p>
+              </a>
+            </li>
+            <li class="nav-item nav-item-dis col-lg-2 col-md-4 col-6">
+              <a class="nav-link nav-link-dis text-center" data-toggle="tab" href="#library">
+                <div class="circle-shape text-white plk" style="background-color: grey;">
+                  <span class="mai-book" style="width: 300px; height: 100px;"></span>
+                </div>
+                <p style="font-weight: bold; margin-top: 10px; font-size: 18px; color: black;">I.B. Library</p>
+              </a>
+            </li>
+            <li class="nav-item nav-item-dis nav-item-dis col-lg-2 col-md-4 col-6">
+              <a class="nav-link nav-link-dis text-center" data-toggle="tab" href="#portal">
+                <div class="circle-shape text-white plk" style="background-color: grey;">
+                  <span class="mai-laptop" style="width: 300px; height: 100px;"></span>
+                </div>
+                <p style="font-weight: bold; margin-top: 10px; font-size: 18px; color: black;">Student Portal</p>
+              </a>
+            </li>
+            <li class="nav-item nav-item-dis col-lg-2 col-md-4 col-6">
+              <a class="nav-link nav-link-dis text-center" data-toggle="tab" href="#email">
+                <div class="circle-shape text-white plk" style="background-color: grey;">
+                  <span class="mai-mail-open" style="width: 300px; height: 100px;"></span>
+                </div>
+                <p style="font-weight: bold; margin-top: 10px; font-size: 18px; color: black;">University Email</p>
+              </a>
+            </li>
+            <li class="nav-item nav-item-dis col-lg-2 col-md-4 col-6">
+              <a class="nav-link nav-link-dis text-center" data-toggle="tab" href="#downloads">
+                <div class="circle-shape text-white plk" style="background-color: grey;">
+                  <span class="mai-cash" style="width: 300px; height: 100px;"></span>
+                </div>
+                <p style="font-weight: bold; margin-top: 10px; font-size: 18px; color: black;">Schedule Fees</p>
+              </a>
+            </li>
+          </ul>
+  
+          <div class="tab-content">
+            <div id="Uninews" class="container tab-pane active"><br>
+              <div class="card-body">
+                
+                <div class="text-center">
+                    <img src="{% static 'img/mainscreen.png' %}" style="border-radius: 5px; max-width: 100%; height:auto">
+                </div>
+                <br>
+                <div style="">
+                  <span style="font-weight: bold;">ADMISSION SCREENING</span> for 2024/2025 Session is OPEN. Please click the Download Instructions button to download the instructions on how to apply.
+                
+                  <p> 
+                    <a href="{% static 'pdf/Mautech_Undergrad_Instructions.pdf' %}" class="btn bg-secondary" style="color: white" download>
+                      Download Instruction
+                    </a>
+
+                  </p>
+                  <p>
+                    Or visit the official Modibbo Adama University (MAU) Online Screening website at: <a href="https://mautech_postutme.admissions.cloud/" style="color: #4E5AFE !important;">https://mautech_postutme.admissions.cloud/</a>
+                  </p>
+                  <p>
+                    For more latest news click <a class="btn btn-secondary" href="{% url 'news' %}">Latest News</a>
+                  </p>
+                </div>  
+              </div>
+            </div>
+  
+            <div id="calendar" class="container tab-pane fade"><br>
+              <div class="card-body">
+                <div class="text-center" style="max-width:350px; margin: 0 auto;">
+                  <div class="form-group">
+                    <label for="calendarInput" style="text-align: center;">School Set Resumption Date</label>
+                    <input type="date" class="form-control" id="calendarInput" value="2024-06-23" style="margin: 0 auto; display: block;">
+                  </div>
+                </div>
+                <p>
+                  The Modibbo Adama University Yola calendar is structured to provide a clear outline of academic activities for the session. Key dates include matriculation ceremony, lectures, examinations, and breaks. The university also observes public holidays and may adjust the calendar as needed. It's essential to regularly check the university's website at <a href="https://mau.edu.ng/" style="color:grey">https://mau.edu.ng/<a/> or visit <a class="btn" href="{% url 'news' %}" style="color:white; background-color:grey">Latest News</a> for more updates.
+                </p>
+
+                <p>
+                  <a href="Calender#" class="btn" style="color: white; background-color: grey" download>
+                    Download University Calender
+                  </a>
+                </p>
+
+              </div>
+            </div>
+  
+            <div id="library" class="container tab-pane fade"><br>
+              <div class="card-body">
+                <div class="text-center">
+                  <img src="{% static 'img/library.jpg' %}" style="border-radius: 5px; max-width: 100%; height:auto">
+                </div>
+                <br>
+                <div style="">
+                  <p>To access the Ibrahim Babangida Library, which is committed to providing quality library and information resources and services in support of teaching, learning, research, and creative work, follow these steps: <span style="font-weight: bold">Visit the university's campus and locate the library at the heart of the campus.</span> 
+                  </p>
+                  <p>
+                    To learn more about the services offered by the Ibrahim Babangida Library, visit the official Modibbo Adama University (MAU) website at <a href="https://mau.edu.ng/library" style="color: brown !important">https://mau.edu.ng/library</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="portal" class="container tab-pane fade"><br>
+              <div class="card-body">
+                <div class="text-center">
+                  <img src="{% static 'img/portal.png' %}" style="border-radius: 5px; max-width: 100%; height:auto">
+                </div>
+                <br>
+                <div style="">
+                  <p>
+                    To check your result, follow these steps:
+                    <ol>
+                      <li>Visit the university's official website at <a href="https://mautech.edu.ng" style="color: #4E5AFE !important;">https://mautech.edu.ng</a>
+                      </li>
+                      <li>Click on the "Student Portal" link at the top navigation menu
+                      </li>
+                      <li>Enter your Matriculation Number and Password to log in
+                      </li>
+                      <li>Once logged in, click on the "Result" tab
+                      </li>
+                      <li>Select your semester and session to view your results</li>
+                    </ol>
+                  </p>
+                  <p>
+                    Or visit the official Modibbo Adama University (MAU) result portal at <a href="https://mautech.safsrms.com/" style="color: #4E5AFE !important;">https://mautech.safsrms.com/</a>
+                  </p>
+  
+                </div>
+
+              
+              </div>
+              
+            </div>
+
+            <div id="email" class="container tab-pane fade"><br>
+              <div class="card-body">
+                <p>To activate your University email account, proceed with the following steps below:</p>
+                    <ol>
+                      <li>
+                        Go to gmail login using your browser or launch your Gmail mobile app 
+                      </li>
+                      <li>
+                        In the email address box: type in your ID number, ignoring your department code and forward slash(/). Add @student.mau.edu.ng to it. 
+              
+                        <br>
+
+                        Example:
+                        
+                        <br> 
+                        If your registration (ID) number is BCH/16U/2309, type in <span style="font-weight: bold">16u2309@student.mau.edu.ng</span> in the email-address input field. 
+                      </li>
+
+                      <li>
+                        The default password is <span style="font-weight: bold">12345678</span>                      
+                      </li>
+
+                      <li>
+                        Ensure you change the default password in <span style="font-weight: bold">list 3</span>, after you logged in for security measures.  
+
+                      </li>
+                    </ol> 
+                    <p>
+                      For more clarification, visit the MAU Yola ICT department with your student ID card to activate your University email account.
+                    </p>
+              </div>
+            </div>
+            <div id="downloads" class="container tab-pane fade"><br>
+              <div class="card-body">
+                <p>The schedule of fees for all programs in main campus at Modibbo Adama University Yola are as follows:
+                </p>
+                <ol>
+                  <li>
+                    <p style="font-weight: bold">
+                  Schedule Fees for Undergraduates
+                    </p>
+                    <a href="{% static 'pdf/Undergraduate-fees.pdf' %}" class="btn" style="color: white; background-color: brown">
+                      Download Undergraduate Programmes
+                    </a>
+                  </li>
+                  <br>
+                  <li>
+                    <p style="font-weight: bold">
+                  Schedule Fees for Postgraduate Programmes
+                    </p>
+                    <href="{% static 'pdf/Postgraduate-fees.pdf' %}" class="btn" style="color: white; background-color: brown">
+                      Download Postgraduate Fees
+                  </a>
+                  </li>
+                  <br>
+                  <li>
+                    <p style="font-weight: bold">
+                  Schedule Fees for Center of Distance Learning Programmes
+                    </p>
+                    <a href="{% static 'pdf/CDL-fees.pdf' %}" class="btn" style="color: white; background-color: brown">
+                      Download CDL Fees
+                    </a>
+                  </li>
+                  <br>
+                  <li>
+                    <p style="font-weight: bold">
+                  Schedule Fees for College of Medical Science Programmes
+                    </p>
+                    <a href="{% static 'pdf/-fees.pdf' %}" class="btn" style="color: white; background-color: brown">
+                      Download College of Medical Science Fees
+                    </a>
+                  </li>
+                  <br>
+                  <li>
+                    <p style="font-weight: bold">
+                  Schedule Fees for Sandwich Programmes
+                    </p>
+                    <a href="{% static 'pdf/Sandwich-fees.pdf' %}" class="btn" style="color: white; background-color: brown">
+                      Download Sandwich Fees
+                    </a>
+                  </li>
+                  <br>
+                  <li>
+                    <p style="font-weight: bold">
+                      Central Laboratory Services
+                    </p>
+                    <a href="{% static 'pdf/Lab-fees.pdf' %}" class="btn" style="color: white; background-color: brown">
+                      Download Charges for Central Laboratory Services 
+                    </a>
+                  </li>
+                </ol>
+                <p>
+                  Or visit the official Modibbo Adama University (MAU) website for more details at: <a href="https://mau.edu.ng/" style="color: brown">https://mau.edu.ng/</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+    <div class="page-section pb-0">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 py-3 wow fadeInUp">
+            <h1>Welcome to Modibbo Adama University</h1>
+            <p class="text-grey mb-4">Modibbo Adama University (MAU), Yola, formerly known as Federal University of Technology, Yola, welcomes you warmly. By selecting MAU, you have become part of a tradition of excellence that has positioned the university in the spotlight locally, regionally, nationally, and internationally. Since its establishment in 1981, MAU Yola has consistently grown as a premier centre for teaching and research in Pure and Applied Sciences, Agriculture, Engineering, Management, Information Technology, and related disciplines.
+            <br>
+            MAU Yola takes pride in providing a serene university environment rich in experience, attracting a large number of applicants from Nigeria and neighbouring countries who seek admission into its academic programmes annually. You are therefore privileged to have been selected to study at this young yet potentially great university.
+            </p>
+            <a href="https://mau.edu.ng/" class="btn btn-link" style="color: white;">Learn More</a>
+          </div>
+          <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
+            <div class="img-place custom-img-1">
+              <img src="{% static 'img/Desc.jpg' %}" class="" alt="" style="max-width: 100%; height:auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="page-section another">
+  <div class="container">
+    <h3 class="text-center mb-5 wow fadeInUp" style="font-weight: bold">M.A.U Academic programs</h3>
+    <div class="owl-carousel wow fadeInUp" id="doctorSlideshow" style="box-shadow: 0 0 20px rgba(0, 0, 30, 0.1); border: 3px white;">
+      <div class="item">
+        <div class="card-doctor">
+          <div style="text-align: center;">
+            <img src="{% static 'img/copy.jpeg' %}" alt="" style="border-radius: 5px; max-width:500px; margin: 0 auto;">
+          </div>
+          <div class="body">
+            <p class="text-xl mb-0 text-center lpm" style="font-weight: bold">Undergraduate Programme</p>
+            <span class="text-sm">Modibbo Adama University of Technology (MAU) offers a wide range of undergraduate programs in Science, Technology, Engineering, and Management. Prospective students can choose from 57 Bachelor's degree programs. 
+            <br>
+            To be eligible, candidates must have a minimun of 5 credits at O level in relevant subjects which must include English language and mathematics for UTME and a minimum Point From UTME scores as can be fixed by the University Admission Comittee from time to time.
+            <br> 
+            Post jamb screening is carried out for students seeking admission into the department as additional requirement by the University. Those Applying through Direct Entry (DE) should possess at least a lower credit in their 'A' Levels or Diploma Programmes or HND Programme in related and relevant fields. This is addition to possession of 5 credits at their 'O' Levels. For detailed program information and admission guidelines, visit <a class"db" href="https://mau.edu.ng/admission/undergraduate" style="font-weight: bold; color: rgb(208, 115, 72) !important">https://mau.edu.ng/admission/undergraduate</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="card-doctor">
+          <div style="text-align: center;">
+            <img src="{% static 'img/images.jpg' %}" alt="" style="border-radius: 5px; max-width:500px; margin: 0 auto;">
+          </div>
+          <div class="body">
+            <p class="text-xl mb-0  text-center lpm" style="font-weight: bold;">Post Graduate Programme</p>
+            <span class="text-sm ">Modibbo Adama University Yola offers a range of postgraduate programs leading to the award of Postgraduate Diplomas, Masters, and Ph.D. degrees. The programs are designed to provide advanced knowledge and skills in various fields, fostering academic excellence and research. Admission requirements include a minimum of a Bachelor's degree with a Second Class Lower Division from a recognized university, while some programs may require additional qualifications or professional experience. Candidates for Ph.D. programs must possess a Master's degree with a CGPA of 3.5 or higher. Applicants are also required to meet specific departmental requirements and pass a screening test or interview. For detailed program information and admission guidelines, visit <a class"db" href="https://mau.edu.ng/admission/postgraduate" style="font-weight: bold; color: rgb(208, 115, 72) !important">https://mau.edu.ng/admission/postgraduate</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card-doctor">
+          <div style="text-align: center;">
+            <img src="{% static 'img/cdl.png' %}" alt="" style="border-radius: 5px; max-width:500px; margin: 0 auto;">
+          </div>
+          <div class="body">
+            <p class="text-xl mb-0  text-center lpm" style="font-weight: bold">Center for Distance Learning, Sandwich and Others</p>
+            <span class="text-sm">The Centre for Distance Learning (CDL) at Modibbo Adama University Yola provides opportunities for students to pursue undergraduate and postgraduate degrees through distance learning. The CDL offers programs in various fields, including Education, Management Sciences, and Social Sciences. The Sandwich program is a specialized program for teachers and other professionals, offered during school vacations. Admission requirements for CDL programs include a minimum of five O'Level credits, including English Language, while Sandwich program applicants must be practicing teachers or professionals with a minimum of five O'Level credits. Additional requirements may apply, depending on the program. For detailed program information and admission guidelines, visit <a class"db" href="https://mau.edu.ng/department/YqM8gpzr/center" style="font-weight: bold; color: rgb(208, 115, 72) !important">https://mau.edu.ng/department/YqM8gpzr/center</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="page-section">
+  <div class="container">
+    <h1 class="text-center wow fadeInUp">Latest News</h1>
+    <div class="row mt-5">
+      {% for posts in posts %}
+        <div class="col-lg-4 py-2 wow zoomIn">
+          <div class="card-blog">
+            <div class="header">
+              <div class="post-category">
+                <span class="tag"style="background-color: rgb(208, 115, 72) !important">{{ posts.title }}</span>
+              </div>
+              <span class="post-thumb"> 
+                  <img src="{{ posts.blog.url }}" alt="{{ posts.title }}">
+              </span>
+            </div>
+            <div class="body">
+              <h5>
+                <a href="{% url 'detailnews' posts.pk %}" class="post-title">
+                  {{ posts.content|safe }}
+                </a>
+              </h5>
+              <div class="site-info">
+                <div class="avatar mr-2">
+                  <div class="avatar-img">
+                    <img src="{{ posts.person.url }}" alt="{{ posts.title }}">
+                  </div>
+                  <span>{{ posts.author }}</span>
+                </div>
+                  <span class="mai-time"></span> {{ posts.created_at|date:"F j, Y, g:i a" }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+      <div class="col-12 text-center mt-4 wow zoomIn">
+        <a href="{% url 'news' %}" class="btn btn-link" style="color:white;">Read More</a>
+      </div>
+
+    </div>
+  </div>
+</div> 
+  <footer class="page-footer bg-image bg-image-overlay-dark" style="background-image: url({% static 'img/download.jfif' %});">
+    <div class="container" style="text-align: center; color: white">
+      <div class="row">
+        <div class="col-sm-12 col-lg-12">
+          <h5 style="font-weight: bold;">Moddibo Adama University Yola</h5>
+          <p style="font-weight: bold;">Established in 1981</p>   
+
+          <hr>
+
+          <h6>Connect with us</h6>
+          <div id="footer-down">
+            <ul class="social-icon">
+              <li class="facebook hvr-pulse">
+                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li class="twitter hvr-pulse">
+                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li class="youtube hvr-pulse">
+                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+              </li>
+              <li class="instagram hvr-pulse">
+                <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+              </li>
+              <li class="linkedin hvr-pulse">
+                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+              </li>
+          </div>
+
+          <div class ="info">
+            <span>
+              <a href="{% url 'index' %}" style="font-weight: bold;">Home</a>
+            </span>
+             /
+             <span>
+              <a href="{% url 'news' %}" style="font-weight: bold">News</a>
+            </span>
+            /
+            <span>
+              <a href="{% url 'campus' %}" style="font-weight: bold">Campus Life</a>
+            </span>
+            /
+            <span>
+              <a href="{% url 'register' %}" style="font-weight: bold">Register</a>
+            </span>
+            /
+            <span>
+              <a href="https://mau.edu.ng/" style="font-weight: bold">M.A.U</a>
+            </span>
+
+          </div>
+
+            <p style="padding-top: 20px; padding-bottom: 5px; font-weight: bold">
+              © 2024 Modibbo Adama University, Yola | Halilu Daksiri
+            </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  
+<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+
+<script  src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
+
+<script src="{% static 'vendor/wow/wow.min.js' %}"></script>
+
+<script src="{% static 'js/theme.js' %}"></script>
+ 
+
+
+
+
+<script>
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    items: 1,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1
+      },
+      1000: {
+        items: 1
+      }
+    }
+  })
+
+</script>
+
+<script>
+  document.getElementById('registerForm').addEventListener('submit', function(event) {
+    document.getElementById('submitButton').disabled = true;
+    document.getElementById('loading').style.display = 'block';
+  });
+</script>
+
+
+</body>
+</html>
+
+
