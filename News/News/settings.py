@@ -1,4 +1,5 @@
-import os 
+import os
+import dj_database_url
 """
 Django settings for News project.
 
