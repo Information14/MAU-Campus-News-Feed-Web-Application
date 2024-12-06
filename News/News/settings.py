@@ -81,14 +81,9 @@ WSGI_APPLICATION = 'News.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'devcampus',
-        'USER': 'Andrew',
-        'PASSWORD': 'Information17$',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('postgresql://devcampus_user:fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs@dpg-ct9ldp68ii6s73ahmld0-a.oregon-postgres.render.com/devcampus')  
+    )
 }
 
 
