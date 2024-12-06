@@ -82,12 +82,17 @@ WSGI_APPLICATION = 'News.wsgi.application'
 
 DATABASE_URL=postgresql://devcampus_user:fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs@dpg-ct9ldp68ii6s73ahmld0-a/devcampus
 
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')  
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',  # Specifies the PostgreSQL database backend
+        'NAME': 'devcampus',  # Name of your database
+        'USER': 'devcampus_user',  # Database username
+        'PASSWORD': 'fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs',  # Database password
+        'HOST': 'dpg-ct9ldp68ii6s73ahmld0-a',  # Hostname of your database
+        'PORT': '5432',  # Port number for PostgreSQL
+    }
 }
+
 
 
 
