@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 import os
 import dj_database_url
+=======
+import dj_database_url
+import os 
+>>>>>>> Stashed changes
 """
 Django settings for News project.
 
