@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
-import os
-import dj_database_url
-=======
 import dj_database_url
 import os 
->>>>>>> Stashed changes
+
 """
 Django settings for News project.
 
@@ -86,17 +82,10 @@ WSGI_APPLICATION = 'News.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'devcampus',
-        'USER': 'Andrew',
-        'PASSWORD': 'Information17$',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+    'default': dj_database_url.parse(
+        'postgresql://devcampus_user:fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs@dpg-ct9ldp68ii6s73ahmld0-a.oregon-postgres.render.com/devcampus'
+    )
 }
-
-DATABASES["default"] = dj_database_url.parse(postgresql://devcampus_user:fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs@dpg-ct9ldp68ii6s73ahmld0-a.oregon-postgres.render.com/devcampus)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
