@@ -80,10 +80,12 @@ WSGI_APPLICATION = 'News.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+DATABASE_URL=postgresql://devcampus_user:fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs@dpg-ct9ldp68ii6s73ahmld0-a/devcampus
+
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('postgresql://devcampus_user:fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs@dpg-ct9ldp68ii6s73ahmld0-a/devcampus')  
+        default=os.getenv('DATABASE_URL')  
     )
 }
 
