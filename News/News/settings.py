@@ -80,21 +80,18 @@ WSGI_APPLICATION = 'News.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASE_URL=postgresql://devcampus_user:fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs@dpg-ct9ldp68ii6s73ahmld0-a/devcampus
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # Specifies the PostgreSQL database backend
-        'NAME': 'devcampus',  # Name of your database
-        'USER': 'devcampus_user',  # Database username
-        'PASSWORD': 'fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs',  # Database password
-        'HOST': 'dpg-ct9ldp68ii6s73ahmld0-a',  # Hostname of your database
-        'PORT': '5432',  # Port number for PostgreSQL
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'devcampus',
+        'USER': 'Andrew',
+        'PASSWORD': 'Information17$',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
-
-
+DATABASES["default"] = dj_database_url.parse(postgresql://devcampus_user:fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs@dpg-ct9ldp68ii6s73ahmld0-a/devcampus)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
