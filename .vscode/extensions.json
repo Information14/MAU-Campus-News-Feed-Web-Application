@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "cweijan.vscode-mysql-client2",
+        "formulahendry.vscode-mysql",
+        "mtxr.sqltools-driver-mysql"
+    ]
+}
