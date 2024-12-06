@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-dj!j9xlsd1fgx^ca12g#g(cl4kvv8j*=*h&=*fh!h3+7j7p6z0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mau-campus-news-feed-web-application.onrender.com']
 
 
 # Application definition
