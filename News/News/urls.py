@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Feed/', include("django.contrib.auth.urls")),
-    path('maunews/', include("Feed.urls")),
+    path('', include("Feed.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
 
 urlpatterns += [
