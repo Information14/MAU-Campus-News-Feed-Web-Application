@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'News.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(
-        'postgresql://devcampus_user:fJxDYr6VycHWX9zDhBeMIGMTJfGTiKOs@dpg-ct9ldp68ii6s73ahmld0-a.oregon-postgres.render.com/devcampus'
+        'postgresql://andrewhalilu_user:LLlmd3sK4oBZtWZq8WhkuZyeArjbWQNY@dpg-cuf72btds78s73fikp2g-a.oregon-postgres.render.com/andrewhalilu'
     )
 }
 
