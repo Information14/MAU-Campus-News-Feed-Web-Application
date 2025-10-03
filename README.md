@@ -49,7 +49,7 @@ The application also includes admin interfaces for managing the content, includi
 ## Languages and Technologies Used
 - **Backend:** Python (Django)
 - **Frontend:** HTML, CSS, JavaScript
-- **Database:** MYSQL Database 
+- **Database:** PostgreSQL Database 
 - **Rich Text Editor:** CKEditor 5
 - **Authentication:** Django's built-in user authentication system
 - **Form Handling:** Django forms for registration and commenting
