@@ -31,7 +31,7 @@
     python manage.py runserver
     ```
 
-7. Access the application in your browser at `http://127.0.0.1:8000/maunews/`.
+7. Access the application in your browser at `http://127.0.0.1:8000/maunews/`
 
 ## Project Overview
 The Campus and News Portal for (Modibbo Adama University Yola) is a web application built using Django, which allows users to view, comment on, and manage campus and news posts. The platform provides functionalities such as login, registration, and content creation, with two primary sections: **News** and **Campus**. Users can interact with the posts, view detailed information, and post comments. 
